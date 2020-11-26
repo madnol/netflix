@@ -1,5 +1,6 @@
 import React from "react";
 import { ListGroup, Badge } from "react-bootstrap";
+
 class CommentList extends React.Component {
   state = {
     comments: [],
@@ -29,7 +30,7 @@ class CommentList extends React.Component {
     return (
       <div className="mb-5">
         {this.state.comments
-          .filter((res) => res.elementId === this.props.movieId)
+          .filter(res => res.elementId === this.props.movieId)
           .map((comment, index) => {
             let variant = "";
 

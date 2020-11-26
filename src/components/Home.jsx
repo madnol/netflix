@@ -1,5 +1,6 @@
 import React from "react";
 import MovieList from "./MovieList";
+import ShowDetail from "./ShowDetail";
 
 class Home extends React.Component {
   state = {
@@ -7,7 +8,7 @@ class Home extends React.Component {
     isTyped: false,
   };
 
-  HandleSearchQuery = (query) => {
+  HandleSearchQuery = query => {
     if (query.length >= 3) {
       this.setState({ keyWord: query, isTyped: true });
     } else {
@@ -24,7 +25,7 @@ class Home extends React.Component {
           <form className="searchBar" action="">
             <input
               type="search"
-              onChange={(e) => {
+              onChange={e => {
                 this.HandleSearchQuery(e.target.value);
               }}
             />
@@ -35,9 +36,9 @@ class Home extends React.Component {
           <MovieList query={this.state.keyWord} />
         ) : (
           <>
-            <MovieList query="batman" />
-            <MovieList query="superman" />
-            <MovieList query="hulk" />
+            <MovieList details={this.props} query="batman" />
+            <MovieList details={this.props} query="superman" />
+            <MovieList details={this.props} query="hulk" />
           </>
         )}
       </>

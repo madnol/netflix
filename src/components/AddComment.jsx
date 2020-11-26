@@ -54,10 +54,7 @@ class AddComment extends React.Component {
         });
       }
     } catch (e) {
-      console.log(e); // Error
-      this.setState({
-        errMessage: e.message,
-      });
+      console.log(e);
     }
   };
 

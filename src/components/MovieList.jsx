@@ -10,7 +10,7 @@ class MovieList extends React.Component {
     displayModal: false,
   };
 
-  sortAsc = (array) => {
+  sortAsc = array => {
     array.sort(function (a, b) {
       var movieA = a.Year; // ignore upper and lowercase
       var movieB = b.Year; // ignore upper and lowercase
@@ -62,22 +62,25 @@ class MovieList extends React.Component {
 
           <h1 className="mt-4 mb-3">{this.props.query.toUpperCase()}</h1>
           <Row>
-            {this.state.Movies.map((movie) => (
+            {this.state.Movies.map(movie => (
               <Col
                 xs={6}
                 md={3}
                 lg={2}
-                key={`MovieID${movie.imdbID}`}
+                key={`MovieId${movie.imdbID}`}
                 className="mb-3"
               >
                 <SingleMovie
                   Movie={movie}
-                  onClicked={() =>
+                  onClicked={
+                    /*() =>
                     this.setState({
                       displayModal: true,
                       selectedMovie: movie,
-                    })
+                    })*/
+                    this.props.history
                   }
+                  details={this.props.details}
                 />
               </Col>
             ))}
