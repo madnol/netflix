@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Dropdown } from "react-bootstrap";
-
+import Registration from "./Registration";
 import logo from "../netflix-logo.png";
 import "../App.css";
+import { Link } from "react-router-dom";
 class NavBar extends Component {
   state = {};
   render() {
@@ -38,6 +39,11 @@ class NavBar extends Component {
               <a className="nav-link" href="#">
                 My List
               </a>
+            </li>
+            <li className="nav-item mr-3">
+              <Link className="nav-link" to="/registration">
+                Registration
+              </Link>
             </li>
           </ul>
 

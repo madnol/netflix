@@ -59,7 +59,7 @@ body {
   padding: 5px;
 }
 
-input {
+#search-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -89,12 +89,12 @@ input {
   transition: all 1s;
 }
 
-form:hover {
+form.searchBar:hover {
   width: 200px;
   cursor: pointer;
 }
 
-form:hover input {
+form:hover #search-bar {
   display: block;
 }
 

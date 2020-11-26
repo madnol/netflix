@@ -1,6 +1,7 @@
 import React from "react";
 import MovieList from "./MovieList";
 import ShowDetail from "./ShowDetail";
+import JumboCarousel from "./JumboCarousel";
 
 class Home extends React.Component {
   state = {
@@ -19,11 +20,13 @@ class Home extends React.Component {
   render() {
     return (
       <>
+        <JumboCarousel />
         <div className="form-inline my-2 my-lg-0">
           {/* searchbar */}
 
           <form className="searchBar" action="">
             <input
+              id="search-bar"
               type="search"
               onChange={e => {
                 this.HandleSearchQuery(e.target.value);

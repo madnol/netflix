@@ -2,18 +2,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import "font-awesome/css/font-awesome.css";
 import React from "react";
 import "./App.css";
-import JumboCarousel from "./components/JumboCarousel";
+
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ShowDetail from "./components/ShowDetail";
+import Registration from "./components/Registration";
 function App() {
   return (
     <>
       <Router>
         <NavBar />
-        <JumboCarousel />
+
         <Route
           path="/"
           exact
@@ -25,7 +26,7 @@ function App() {
           ) => <Home {...props} />} // in this way you can pass your own props along with the router ones
         />
         <Route path="/details/:something" component={ShowDetail} />
-        <Home />
+        <Route path="/registration" component={Registration} />
         <Footer />
       </Router>
     </>
